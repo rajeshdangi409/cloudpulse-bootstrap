@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+tfplan
+
+# Secrets — never commit real values (the .example template IS committed)
+terraform.tfvars
+*.pem
+
+# Local backups
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db

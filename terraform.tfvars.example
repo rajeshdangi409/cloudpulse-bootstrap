@@ -1,0 +1,17 @@
+# Copy this file: cp terraform.tfvars.example terraform.tfvars
+# Fill in the values below before running terraform apply
+
+region       = "ap-south-1"
+project_name = "cloudpulse"
+key_name     = "cloudpulse-key"    # EC2 Key Pair name (create it in the AWS Console)
+
+# EC2 instance type (t2.micro = free tier eligible)
+instance_type = "t2.micro"
+
+# Bootstrap VPC CIDR — keep it separate from the main infra VPC (10.0.0.0/16)
+vpc_cidr    = "10.10.0.0/16"
+subnet_cidr = "10.10.1.0/24"
+
+# Terraform remote state (must match backend.tf) — used to scope the Jenkins IAM role
+tf_state_bucket = "cloudpulse-terraform-state"
+tf_lock_table   = "terraform-lock-table"
